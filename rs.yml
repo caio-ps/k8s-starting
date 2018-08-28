@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: web-rs
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: hello-world
