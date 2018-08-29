@@ -11,8 +11,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
+      maxUnavailable: 1 #only ever have one pod unavailable
+      maxSurge: 1 #Never go more than one pod above the desired state
   template:
     metadata:
       labels:
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: hello-pod
-        image: nigelpoulton/k8sbook:latest
+        image: nigelpoulton/k8sbook:edge
         ports:
         - containerPort: 8080
